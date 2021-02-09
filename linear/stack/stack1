@@ -1,0 +1,30 @@
+https://www.codechef.com/CKAL2021/problems/CAKP03
+
+#include <bits/stdc++.h>
+using namespace std;
+int main() 
+{
+    int t;
+    cin>>t;
+    while(t--)
+    {
+        string string1,string2;
+        cin>>string1;
+        cin>>string2;
+        stack <char> s1;
+        stack <char> s2;
+        for(int i=0;string1[i]!='\0';i++)
+             s1.push(string1[i]);
+        for(int i=0;string2[i]!='\0';i++)
+             s2.push(string2[i]);
+        while(!s1.empty() && !s2.empty())
+        {
+            if(s1.top()==s2.top())
+               s1.pop();
+            s2.pop();
+        }
+        if(s1.empty())  cout<<"YES\n";
+        else   cout<<"NO\n";
+    }
+	return 0;
+}
