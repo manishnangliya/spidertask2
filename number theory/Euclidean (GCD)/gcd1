@@ -1,0 +1,22 @@
+https://www.codechef.com/CP7D2021/problems/CHEFBREA
+
+#include <iostream>
+using namespace std;
+int gcd(int l, int b)
+{
+    if(l==0) return b;
+    return gcd(b%l,l);
+}
+int main() 
+{
+    int t;
+    cin>>t;
+    while(t--)
+    {
+        int l,b,max;
+        cin>>l>>b;
+        int z=gcd(l,b);
+        cout<<(l*b)/(z*z)<<endl;
+    }
+	return 0;
+}
