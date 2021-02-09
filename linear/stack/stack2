@@ -1,0 +1,36 @@
+https://www.codechef.com/CP7D2021/problems/CHEFSTRN
+
+#include <iostream>
+#include <stack>
+using namespace std;
+int main() 
+{
+    string str;
+    cin>>str;
+    stack <char> s;
+    for(int i=0;str[i]!='\0';i++)
+    {
+         if(!s.empty()&&str[i]==s.top())
+         {
+             s.pop();
+         }
+         else
+             s.push(str[i]);
+    }
+    if(s.empty())cout<<"Empty String";
+    else
+    {
+        stack <char> d;
+        while(!s.empty())
+        {
+            d.push(s.top());
+            s.pop();
+        }
+        while(!d.empty())
+        {
+            cout<<d.top();
+            d.pop();
+        }
+    }
+	return 0;
+}
